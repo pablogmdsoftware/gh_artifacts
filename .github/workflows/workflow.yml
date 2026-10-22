@@ -1,7 +1,17 @@
-run-name: ${{github.actor}} triggered this workflow
+run-name: C++ Build
 on: [push]
 jobs:
-  job1:
-    runs-on: ubuntu-slim
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo test
+      - name: Checkout source code
+        uses: actions/checkout@v4
+      - name: Display GCC version
+        run: g++ --version
+      - name: Compile application
+        run: |
+          mkdir -p build
+          g++ src/main.cpp -o build/artifact
+      - name: Run application
+        run: |
+          ./build/artifact
