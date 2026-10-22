@@ -4,4 +4,4 @@ jobs:
   job1:
     runs-on: ubuntu-slim
     steps:
-      run: echo test
+      - run: echo test
