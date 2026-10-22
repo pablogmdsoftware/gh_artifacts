@@ -1,0 +1,7 @@
+run-name: ${{github.actor}} triggered this workflow
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-slim
+    steps:
+      run: echo test
